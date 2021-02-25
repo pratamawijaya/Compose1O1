@@ -35,10 +35,7 @@ fun MulaiTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable(
         LightColorPalette
     }
 
-    MaterialTheme(
-        colors = colors,
-        typography = Typography,
-        shapes = Shapes,
-        content = content
-    )
+    MaterialTheme(colors = colors) {
+        content()
+    }
 }
