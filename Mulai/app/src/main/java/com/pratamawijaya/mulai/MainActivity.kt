@@ -3,6 +3,8 @@ package com.pratamawijaya.mulai
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material.Divider
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -17,9 +19,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyApp {
-                Greeting(name = "Hello")
+                MyScreenContent()
             }
         }
+    }
+}
+
+@Composable
+fun MyScreenContent() {
+    Column {
+        Greeting(name = "Android")
+        Divider(color = Color.Black)
+        Greeting(name = "There")
     }
 }
 
@@ -33,10 +44,10 @@ fun MyApp(content: @Composable () -> Unit) {
 }
 
 
-@Preview("Text Preview")
+@Preview("App Preview")
 @Composable
-fun DefaultPreview(){
+fun DefaultPreview() {
     MyApp {
-        Greeting(name = "Hello")
+        MyScreenContent()
     }
 }
