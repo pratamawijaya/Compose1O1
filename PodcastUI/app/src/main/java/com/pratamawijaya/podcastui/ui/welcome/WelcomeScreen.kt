@@ -1,9 +1,16 @@
 package com.pratamawijaya.podcastui.ui.welcome
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Surface
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.navigate
 import androidx.navigation.compose.popUpTo
+import com.pratamawijaya.podcastui.ui.common.PreviewContent
 import com.pratamawijaya.podcastui.ui.navigation.Destination
 import com.pratamawijaya.podcastui.ui.navigation.Navigator
 
@@ -25,11 +32,31 @@ fun WelcomeScreen() {
 
 @Composable
 fun WelcomeScreenContent(visible: Boolean, onGetStarted: () -> Unit) {
+    Surface {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center,
+            modifier = Modifier.fillMaxSize()
+        ) {
 
+        }
+    }
 }
 
 @Preview(name = "Welcome")
 @Composable
 fun WelcomeScreenPreview() {
-    ProviewCont
+    PreviewContent {
+        WelcomeScreenContent(visible = true) {}
+    }
+}
+
+@Preview(name = "WelcomeDark")
+@Composable
+fun WelcomeScreenDarkPreview() {
+    PreviewContent(darkTheme = true) {
+        WelcomeScreenContent(visible = true) {
+
+        }
+    }
 }

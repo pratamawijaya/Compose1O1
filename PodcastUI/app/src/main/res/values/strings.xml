@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PodcastUI</string>
+
+    <string name="welcome_title">Selamat Datang</string>
 </resources>
