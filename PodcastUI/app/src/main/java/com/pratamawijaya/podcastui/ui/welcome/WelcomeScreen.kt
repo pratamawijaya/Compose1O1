@@ -39,6 +39,11 @@ fun WelcomeScreenContent(visible: Boolean, onGetStarted: () -> Unit) {
             modifier = Modifier.fillMaxSize()
         ) {
 
+            AnimatedTile(visible = visible)
+
+            AnimatedImage(visible = visible)
+
+
         }
     }
 }
@@ -55,8 +60,6 @@ fun WelcomeScreenPreview() {
 @Composable
 fun WelcomeScreenDarkPreview() {
     PreviewContent(darkTheme = true) {
-        WelcomeScreenContent(visible = true) {
-
-        }
+        WelcomeScreenContent(visible = true) {}
     }
 }
