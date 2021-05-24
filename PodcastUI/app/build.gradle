@@ -55,7 +55,7 @@ dependencies {
     implementation 'androidx.activity:activity-compose:1.3.0-alpha08'
 
     // Navigation
-    implementation "androidx.navigation:navigation-compose:1.0.0-alpha10"
+    implementation "androidx.navigation:navigation-compose:$navigation_compose_version"
 
     // Compose Accompanist
     implementation "com.google.accompanist:accompanist-insets:$accompanist_version"
