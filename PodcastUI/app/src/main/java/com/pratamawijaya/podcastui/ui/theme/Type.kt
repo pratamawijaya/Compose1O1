@@ -18,21 +18,52 @@ val NunitoSans = FontFamily(
 
 // Set of Material typography styles to start with
 val Typography = Typography(
-    body1 = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
-    )
-    /* Other default text styles to override
-    button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
+
+    h1 = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 34.sp
+    ),
+
+    h2 = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.Bold,
         fontSize = 14.sp
     ),
-    caption = TextStyle(
-        fontFamily = FontFamily.Default,
+
+    h5 = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp
+    ),
+
+    subtitle1 = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 16.sp
+    ),
+
+    body1 = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 14.sp
+    ),
+
+    body2 = TextStyle(
+        fontFamily = NunitoSans,
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp
+    ),
+
+    button = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp
+    ),
+
+    caption = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 12.sp
     )
-    */
 )
