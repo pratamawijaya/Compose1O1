@@ -13,6 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navDeepLink
 import com.pratamawijaya.podcastui.R
+import com.pratamawijaya.podcastui.ui.home.HomeScreen
 import com.pratamawijaya.podcastui.ui.navigation.Destination
 import com.pratamawijaya.podcastui.ui.navigation.Navigator
 import com.pratamawijaya.podcastui.ui.navigation.ProvideNavHostController
@@ -51,7 +52,7 @@ fun PodcastUiApp(
                     }
 
                     composable(Destination.home) {
-                        // todo
+                        HomeScreen()
                     }
 
                     composable(
