@@ -43,7 +43,7 @@ class MainActions(navController: NavHostController) {
 //        )
 //        navController.navigate("${MainDestinations.EDIT_NOTE}/${note.id}")
 //    }
-    
+
     val upPress: () -> Unit = {
         navController.navigateUp()
     }
