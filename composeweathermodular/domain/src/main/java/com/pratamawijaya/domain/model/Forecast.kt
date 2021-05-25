@@ -1,5 +1,7 @@
 package com.pratamawijaya.domain.model
 
+import java.util.*
+
 data class Forecast(
     val city: String,
     val dailyForecast: List<DailyForecast> = emptyList()
@@ -18,6 +20,12 @@ data class HourlyForecast(
     val timestamp: String,
     val temperature: Int,
     val weather: Weather
+)
+
+data class CurrentWeather(
+    val time: Date,
+    val minTemp: Int,
+    val maxTemp: Int
 )
 
 enum class Weather {
