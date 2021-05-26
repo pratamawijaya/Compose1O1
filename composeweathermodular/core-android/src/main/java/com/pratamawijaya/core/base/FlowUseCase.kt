@@ -1,4 +1,4 @@
-package com.pratamawijaya.domain.base
+package com.pratamawijaya.core.base
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow

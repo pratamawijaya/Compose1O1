@@ -1,4 +1,4 @@
-package com.pratamawijaya.domain.base
+package com.pratamawijaya.core.base
 
 sealed class Result<out R> {
 

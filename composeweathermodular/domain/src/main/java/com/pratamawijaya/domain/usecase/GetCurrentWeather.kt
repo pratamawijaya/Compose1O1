@@ -1,7 +1,7 @@
 package com.pratamawijaya.domain.usecase
 
-import com.pratamawijaya.domain.base.FlowUseCase
-import com.pratamawijaya.domain.base.Result
+import com.pratamawijaya.core.base.FlowUseCase
+import com.pratamawijaya.core.base.Result
 import com.pratamawijaya.domain.di.IoDispatcher
 import com.pratamawijaya.domain.model.CurrentWeather
 import com.pratamawijaya.domain.repository.WeatherRepository
