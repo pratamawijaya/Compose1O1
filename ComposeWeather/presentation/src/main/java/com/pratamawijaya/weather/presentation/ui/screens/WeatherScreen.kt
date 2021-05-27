@@ -39,8 +39,7 @@ fun WeatherScreen() {
                 value = city,
                 modifier = Modifier
                     .padding(8.dp)
-                    .fillMaxWidth()
-                    .height(64.dp),
+                    .fillMaxWidth(),
                 placeholder = { Text(text = "Search City Weather") },
                 onValueChange = {
                     city = it
@@ -51,9 +50,13 @@ fun WeatherScreen() {
                         contentDescription = null
                     )
                 },
-                colors = TextFieldDefaults.textFieldColors(
-                    backgroundColor = Color.Green
-                )
+                colors = TextFieldDefaults.outlinedTextFieldColors(
+                    backgroundColor = Color.Magenta,
+                    textColor = Color.Black,
+                    focusedBorderColor = Color.Black,
+                    unfocusedBorderColor = Color.DarkGray
+                ),
+                singleLine = true
             )
 
             Spacer(modifier = Modifier.height(48.dp))
@@ -78,6 +81,14 @@ fun WeatherScreen() {
 @Composable
 fun PreviewWeatherScreen() {
     WeatherModularTheme {
+        WeatherScreen()
+    }
+}
+
+@Preview(name = "Dark Theme")
+@Composable
+fun PreviewDarkWeatherScreen() {
+    WeatherModularTheme(darkTheme = true) {
         WeatherScreen()
     }
 }

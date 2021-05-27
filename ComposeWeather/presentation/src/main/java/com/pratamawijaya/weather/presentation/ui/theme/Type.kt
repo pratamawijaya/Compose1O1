@@ -1,6 +1,7 @@
 package com.pratamawijaya.weather.presentation.ui.theme
 
 import androidx.compose.material.Typography
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -65,5 +66,64 @@ val Typography = Typography(
         fontFamily = NunitoSans,
         fontWeight = FontWeight.SemiBold,
         fontSize = 12.sp
+    )
+)
+
+val TypographyDark = Typography(
+
+    h1 = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 34.sp,
+        color = Color.White
+    ),
+
+    h2 = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp,
+        color = Color.White
+    ),
+
+    h5 = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 14.sp,
+        color = Color.White
+    ),
+
+    subtitle1 = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 16.sp,
+        color = Color.White
+    ),
+
+    body1 = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 14.sp,
+        color = Color.White
+    ),
+
+    body2 = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.Normal,
+        fontSize = 12.sp,
+        color = Color.White
+    ),
+
+    button = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp,
+        color = Color.White
+    ),
+
+    caption = TextStyle(
+        fontFamily = NunitoSans,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 12.sp,
+        color = Color.White
     )
 )
