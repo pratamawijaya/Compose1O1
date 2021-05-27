@@ -3,6 +3,9 @@ package com.pratamawijaya.presentation
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.navigation.compose.NavHost
@@ -15,7 +18,7 @@ import com.pratamawijaya.presentation.theme.ComposeWeatherModularTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ForecastActivity : LocationActivity() {
+class WeatherActivity : LocationActivity() {
 
     private var forecastViewModel: ForecastViewModel? = null
 
@@ -24,7 +27,7 @@ class ForecastActivity : LocationActivity() {
 
         setContent {
             ComposeWeatherModularTheme {
-
+                HelloWorld()
             }
         }
     }
@@ -41,6 +44,15 @@ class ForecastActivity : LocationActivity() {
         TODO("Not yet implemented")
     }
 
+}
+
+@Composable
+fun HelloWorld() {
+    Surface {
+        Column {
+            Text(text = "Hello")
+        }
+    }
 }
 
 @Composable

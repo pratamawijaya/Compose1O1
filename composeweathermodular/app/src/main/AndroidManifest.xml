@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Composeweathermodular">
         <activity
-            android:name=".presentation.ForecastActivity"
+            android:name=".presentation.WeatherActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
