@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.pratamawijaya.weather.presentation.ui.screens.WeatherScreen
 import com.pratamawijaya.weather.presentation.ui.theme.WeatherModularTheme
 
 class WeatherActivity : AppCompatActivity() {
@@ -23,31 +24,8 @@ class WeatherActivity : AppCompatActivity() {
         setContent {
             WeatherModularTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
-                }
+                WeatherScreen()
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Column(
-        modifier = Modifier
-            .fillMaxHeight()
-            .fillMaxWidth(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(text = "Hello $name!")
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    WeatherModularTheme {
-        Greeting("Android")
     }
 }
