@@ -3,7 +3,6 @@ package com.pratamawijaya.weather.presentation
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.pratamawijaya.weather.presentation.ui.event.ForecastViewEvent
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 
 //@HiltViewModel
