@@ -19,7 +19,6 @@ class WeatherActivity : LocationActivity() {
             }
         }
     }
-    
 
     override fun onLocationSuccess(cityName: String) {
         Log.d("debug", "city name $cityName")
