@@ -41,6 +41,8 @@ android {
 dependencies {
 
     implementation project(":presentation")
+    implementation project(":data")
+    implementation project(":domain")
 
     implementation 'com.github.ajalt:timberkt:1.5.1'
 
