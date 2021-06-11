@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
+import com.github.ajalt.timberkt.d
+import com.github.ajalt.timberkt.e
 import com.pratamawijaya.weather.presentation.ui.base.LocationActivity
 import com.pratamawijaya.weather.presentation.ui.screens.WeatherScreen
 import com.pratamawijaya.weather.presentation.ui.theme.WeatherModularTheme
@@ -21,11 +23,11 @@ class WeatherActivity : LocationActivity() {
     }
 
     override fun onLocationSuccess(cityName: String) {
-        Log.d("debug", "city name $cityName")
+        d { "city name $cityName" }
     }
 
     override fun onLocationFailure() {
-        Log.e("debug", "failure")
+        e { "fail get location" }
     }
 }
 

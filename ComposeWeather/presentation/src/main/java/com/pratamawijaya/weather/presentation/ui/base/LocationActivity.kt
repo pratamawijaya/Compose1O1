@@ -10,15 +10,17 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
+import dagger.hilt.android.AndroidEntryPoint
 import pub.devrel.easypermissions.EasyPermissions
+import javax.inject.Inject
 
-//@AndroidEntryPoint
+@AndroidEntryPoint
 abstract class LocationActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
 
-//    @Inject
+    @Inject
     lateinit var locationProvider: FusedLocationProviderClient
 
-//    @Inject
+    @Inject
     lateinit var geoCoder: Geocoder
 
     private val locationRequest: LocationRequest by lazy {
