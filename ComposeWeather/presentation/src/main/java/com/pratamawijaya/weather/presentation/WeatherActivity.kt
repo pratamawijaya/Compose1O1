@@ -1,23 +1,14 @@
 package com.pratamawijaya.weather.presentation
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.compose.setContent
-import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.pratamawijaya.weather.presentation.ui.base.LocationActivity
 import com.pratamawijaya.weather.presentation.ui.screens.WeatherScreen
 import com.pratamawijaya.weather.presentation.ui.theme.WeatherModularTheme
 
-class WeatherActivity : AppCompatActivity() {
+class WeatherActivity : LocationActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,4 +19,18 @@ class WeatherActivity : AppCompatActivity() {
             }
         }
     }
+    
+
+    override fun onLocationSuccess(cityName: String) {
+        Log.d("debug", "city name $cityName")
+    }
+
+    override fun onLocationFailure() {
+        Log.e("debug", "failure")
+    }
+}
+
+@Composable
+fun App() {
+    
 }
