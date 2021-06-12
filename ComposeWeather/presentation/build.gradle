@@ -1,4 +1,4 @@
-import com.pratamawijaya.weather.buildsrc.Libs
+import com.pratamawijaya.weather.buildsrc.*
 
 plugins {
     id 'com.android.library'

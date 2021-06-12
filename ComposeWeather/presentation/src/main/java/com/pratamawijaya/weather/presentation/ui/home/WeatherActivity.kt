@@ -1,4 +1,4 @@
-package com.pratamawijaya.weather.presentation
+package com.pratamawijaya.weather.presentation.ui.home
 
 import android.os.Bundle
 import android.util.Log
@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import com.github.ajalt.timberkt.d
 import com.github.ajalt.timberkt.e
 import com.pratamawijaya.weather.presentation.ui.base.LocationActivity
-import com.pratamawijaya.weather.presentation.ui.screens.WeatherScreen
+import com.pratamawijaya.weather.presentation.ui.home.components.WeatherScreen
 import com.pratamawijaya.weather.presentation.ui.theme.WeatherModularTheme
 
 class WeatherActivity : LocationActivity() {

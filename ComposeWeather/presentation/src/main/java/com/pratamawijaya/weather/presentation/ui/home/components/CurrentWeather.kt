@@ -1,4 +1,4 @@
-package com.pratamawijaya.weather.presentation.ui.components
+package com.pratamawijaya.weather.presentation.ui.home.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
