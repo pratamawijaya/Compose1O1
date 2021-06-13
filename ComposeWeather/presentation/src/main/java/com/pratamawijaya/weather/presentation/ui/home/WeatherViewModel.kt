@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.github.ajalt.timberkt.d
 import com.pratamawijaya.weather.domain.model.Weather
 import com.pratamawijaya.weather.domain.usecase.GetWeather
-import com.pratamawijaya.weather.presentation.ui.event.ForecastViewEvent
+import com.pratamawijaya.weather.presentation.ui.home.event.ForecastViewEvent
 import com.pratamawijaya.weather.presentation.ui.home.state.ViewStatus
 import com.pratamawijaya.weather.presentation.ui.home.state.WeatherState
 import dagger.hilt.android.lifecycle.HiltViewModel
