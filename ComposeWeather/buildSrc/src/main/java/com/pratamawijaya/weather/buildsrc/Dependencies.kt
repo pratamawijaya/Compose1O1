@@ -14,4 +14,8 @@ object Libs {
         const val hiltCompiler = "com.google.dagger:hilt-android-compiler:$version"
         const val hiltGradlePlugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
     }
+
+    object Compose {
+        const val hiltNavigation = "androidx.hilt:hilt-navigation-compose:1.0.0-alpha01"
+    }
 }
