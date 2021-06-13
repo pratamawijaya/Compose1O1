@@ -11,12 +11,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.pratamawijaya.weather.presentation.ui.home.WeatherViewModel
-import com.pratamawijaya.weather.presentation.ui.home.components.CurrentWeather
 import com.pratamawijaya.weather.presentation.ui.home.state.WeatherState
 import com.pratamawijaya.weather.presentation.ui.theme.WeatherModularTheme
 
 @Composable
-fun WeatherScreen(viewModel: WeatherViewModel, onLocationRequested: () -> Unit) {
+fun WeatherScreen(
+    viewModel: WeatherViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
+    onLocationRequested: () -> Unit
+) {
 
     val viewModelState by viewModel.weatherState.collectAsState(WeatherState())
 
@@ -73,7 +75,7 @@ fun WeatherScreen(viewModel: WeatherViewModel, onLocationRequested: () -> Unit) 
 @Composable
 fun PreviewWeatherScreen() {
     WeatherModularTheme {
-//        WeatherScreen()
+        WeatherScreen(onLocationRequested = {})
     }
 }
 
@@ -81,6 +83,6 @@ fun PreviewWeatherScreen() {
 @Composable
 fun PreviewDarkWeatherScreen() {
     WeatherModularTheme(darkTheme = true) {
-//        WeatherScreen()
+        WeatherScreen(onLocationRequested = {})
     }
 }

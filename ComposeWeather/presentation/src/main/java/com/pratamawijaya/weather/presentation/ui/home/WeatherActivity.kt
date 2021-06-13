@@ -3,16 +3,11 @@ package com.pratamawijaya.weather.presentation.ui.home
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
-import androidx.hilt.navigation.compose.hiltNavGraphViewModel
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import com.github.ajalt.timberkt.d
 import com.github.ajalt.timberkt.e
 import com.pratamawijaya.weather.presentation.ui.base.LocationActivity
-import com.pratamawijaya.weather.presentation.ui.home.components.WeatherScreen
 import com.pratamawijaya.weather.presentation.ui.home.event.LocationViewEvent
-import com.pratamawijaya.weather.presentation.ui.navigation.Destinations
-import com.pratamawijaya.weather.presentation.ui.navigation.Navigations
+import com.pratamawijaya.weather.presentation.ui.navigation.NavGraph
 import com.pratamawijaya.weather.presentation.ui.navigation.ProvideNavHosController
 import com.pratamawijaya.weather.presentation.ui.theme.WeatherModularTheme
 
@@ -50,17 +45,7 @@ class WeatherActivity : LocationActivity() {
 fun WeatherApp(onLocationRequested: (WeatherViewModel) -> Unit = {}) {
 
     ProvideNavHosController {
-        NavHost(Navigations.current, Destinations.homescreen) {
-            composable(Destinations.homescreen) { backStackEntry ->
-                val viewModel = hiltNavGraphViewModel<WeatherViewModel>(backStackEntry)
-                WeatherScreen(
-                    viewModel = viewModel,
-                    onLocationRequested = { onLocationRequested(viewModel) })
-            }
-
-            // other page
-//            composable()
-        }
+        NavGraph()
     }
 
 

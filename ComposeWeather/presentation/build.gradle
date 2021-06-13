@@ -50,8 +50,10 @@ dependencies {
     implementation(Libs.Compose.composeMaterial)
     implementation(Libs.Compose.composeUiTooling)
     implementation(Libs.Compose.composeActivity)
+    implementation(Libs.Compose.composeViewmodel)
 //    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0-beta07"
     implementation(Libs.Compose.hiltNavigation)
+
 
     // google location
     implementation "com.google.android.gms:play-services-location:18.0.0"
