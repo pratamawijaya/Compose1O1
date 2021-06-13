@@ -16,6 +16,14 @@ object Libs {
     }
 
     object Compose {
+        private const val version = "1.0.0-beta07"
+
+        const val composeUi = "androidx.compose.ui:ui:$version"
+        const val composeMaterial = "androidx.compose.material:material:$version"
+        const val composeUiTooling = "androidx.compose.ui:ui-tooling:$version"
+        const val composeActivity = "androidx.activity:activity-compose:1.3.0-alpha08"
+        const val composeConstraintLayout =
+            "androidx.constraintlayout:constraintlayout-compose:1.0.0-beta07"
         const val hiltNavigation = "androidx.hilt:hilt-navigation-compose:1.0.0-alpha01"
     }
 }

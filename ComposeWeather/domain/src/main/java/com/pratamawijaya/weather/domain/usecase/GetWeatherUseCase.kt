@@ -9,10 +9,10 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class GetWeather @Inject constructor(
+class GetWeatherUseCase @Inject constructor(
     private val repo: WeatherRepository,
     @IoDispatcher dispatcher: CoroutineDispatcher
-) : FlowUseCase<GetWeather.Param, Weather>(dispatcher) {
+) : FlowUseCase<GetWeatherUseCase.Param, Weather>(dispatcher) {
 
     data class Param(
         val cityName: String

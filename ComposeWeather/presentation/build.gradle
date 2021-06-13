@@ -46,11 +46,12 @@ dependencies {
     implementation project(":domain")
 
     // compose
-    implementation "androidx.compose.ui:ui:$compose_version"
-    implementation "androidx.compose.material:material:$compose_version"
-    implementation "androidx.compose.ui:ui-tooling:$compose_version"
-    implementation 'androidx.activity:activity-compose:1.3.0-alpha08'
+    implementation(Libs.Compose.composeUi)
+    implementation(Libs.Compose.composeMaterial)
+    implementation(Libs.Compose.composeUiTooling)
+    implementation(Libs.Compose.composeActivity)
 //    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0-beta07"
+    implementation(Libs.Compose.hiltNavigation)
 
     // google location
     implementation "com.google.android.gms:play-services-location:18.0.0"

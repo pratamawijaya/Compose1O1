@@ -10,11 +10,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.pratamawijaya.weather.presentation.ui.home.WeatherViewModel
 import com.pratamawijaya.weather.presentation.ui.home.components.CurrentWeather
+import com.pratamawijaya.weather.presentation.ui.home.state.WeatherState
 import com.pratamawijaya.weather.presentation.ui.theme.WeatherModularTheme
 
 @Composable
-fun WeatherScreen() {
+fun WeatherScreen(viewModel: WeatherViewModel, onLocationRequested: () -> Unit) {
+
+    val viewModelState by viewModel.weatherState.collectAsState(WeatherState())
+
     var city by remember { mutableStateOf("") }
 
     Surface {
@@ -68,7 +73,7 @@ fun WeatherScreen() {
 @Composable
 fun PreviewWeatherScreen() {
     WeatherModularTheme {
-        WeatherScreen()
+//        WeatherScreen()
     }
 }
 
@@ -76,6 +81,6 @@ fun PreviewWeatherScreen() {
 @Composable
 fun PreviewDarkWeatherScreen() {
     WeatherModularTheme(darkTheme = true) {
-        WeatherScreen()
+//        WeatherScreen()
     }
 }

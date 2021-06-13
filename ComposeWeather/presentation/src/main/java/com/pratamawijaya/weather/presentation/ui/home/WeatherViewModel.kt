@@ -4,8 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.github.ajalt.timberkt.d
 import com.pratamawijaya.weather.domain.model.Weather
-import com.pratamawijaya.weather.domain.usecase.GetWeather
+import com.pratamawijaya.weather.domain.usecase.GetWeatherUseCase
 import com.pratamawijaya.weather.presentation.ui.home.event.ForecastViewEvent
+import com.pratamawijaya.weather.presentation.ui.home.event.LocationViewEvent
 import com.pratamawijaya.weather.presentation.ui.home.state.ViewStatus
 import com.pratamawijaya.weather.presentation.ui.home.state.WeatherState
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,7 +17,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class WeatherViewModel @Inject constructor(private val getWeather: GetWeather) : ViewModel() {
+class WeatherViewModel @Inject constructor(private val getWeatherUseCase: GetWeatherUseCase) : ViewModel() {
 
 
     // state with stateFlow
@@ -27,7 +28,7 @@ class WeatherViewModel @Inject constructor(private val getWeather: GetWeather) :
         when (event) {
             is ForecastViewEvent.GetForecast -> {
                 // call usecase
-                getWeather(GetWeather.Param(event.city)).collectLatest { result ->
+                getWeatherUseCase(GetWeatherUseCase.Param(event.city)).collectLatest { result ->
                     if (result.isSuccessFull()) {
                         _weatherState.emit(
                             weatherState.value.copy(
@@ -37,9 +38,17 @@ class WeatherViewModel @Inject constructor(private val getWeather: GetWeather) :
                         )
                     }
                 }
-                getWeather.execute(GetWeather.Param("Jakarta")).collectLatest { result ->
+                getWeatherUseCase.execute(GetWeatherUseCase.Param("Jakarta")).collectLatest { result ->
                     d { "result viewmodel $result" }
                 }
+            }
+        }
+    }
+
+    fun onLocationEvent(event: LocationViewEvent) = viewModelScope.launch {
+        when (event) {
+            is LocationViewEvent.SetLocation ->{
+                onForecastEvent(ForecastViewEvent.GetForecast(event.city))
             }
         }
     }
