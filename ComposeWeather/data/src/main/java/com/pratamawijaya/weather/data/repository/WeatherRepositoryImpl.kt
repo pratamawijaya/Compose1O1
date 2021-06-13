@@ -24,7 +24,7 @@ class WeatherRepositoryImpl : WeatherRepository {
                 Log.e("tag", "kena throw ${it.localizedMessage}")
             },
             shouldFetch = {
-                it == null
+                true
             }
 
         )
