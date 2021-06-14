@@ -42,6 +42,10 @@ dependencies {
     implementation(Libs.Hilt.hiltAndroid)
     kapt(Libs.Hilt.hiltCompiler)
 
+    // retrofit
+    implementation(Libs.Retrofit.retrofit)
+    implementation(Libs.Retrofit.gsonConverter)
+    implementation(Libs.Retrofit.loggingInterceptor)
 
     // coroutine
     implementation(Libs.Coroutines.coroutineCore)

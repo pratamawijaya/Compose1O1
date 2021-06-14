@@ -1,6 +1,12 @@
 package com.pratamawijaya.weather.buildsrc
 
 object Libs {
+    object Retrofit {
+        const val retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
+        const val gsonConverter = "com.squareup.retrofit2:converter-gson:2.9.0"
+        const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:4.9.1"
+    }
+
     object Coroutines {
         private const val version = "1.5.0"
         const val coroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"

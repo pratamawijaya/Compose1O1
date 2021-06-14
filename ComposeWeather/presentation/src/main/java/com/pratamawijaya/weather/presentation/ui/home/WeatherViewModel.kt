@@ -17,7 +17,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class WeatherViewModel @Inject constructor(private val getWeatherUseCase: GetWeatherUseCase) : ViewModel() {
+class WeatherViewModel @Inject constructor(private val getWeatherUseCase: GetWeatherUseCase) :
+    ViewModel() {
 
 
     // state with stateFlow
@@ -38,16 +39,18 @@ class WeatherViewModel @Inject constructor(private val getWeatherUseCase: GetWea
                         )
                     }
                 }
-                getWeatherUseCase.execute(GetWeatherUseCase.Param("Jakarta")).collectLatest { result ->
-                    d { "result viewmodel $result" }
-                }
+                getWeatherUseCase.execute(GetWeatherUseCase.Param("Jakarta"))
+                    .collectLatest { result ->
+                        d { "result viewmodel $result" }
+                    }
             }
         }
     }
 
     fun onLocationEvent(event: LocationViewEvent) = viewModelScope.launch {
         when (event) {
-            is LocationViewEvent.SetLocation ->{
+            is LocationViewEvent.SetLocation -> {
+                d { "viewmodel set location ${event.city}" }
                 onForecastEvent(ForecastViewEvent.GetForecast(event.city))
             }
         }
