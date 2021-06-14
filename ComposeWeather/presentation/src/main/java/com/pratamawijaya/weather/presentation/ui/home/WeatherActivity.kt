@@ -39,6 +39,10 @@ class WeatherActivity : LocationActivity() {
         e { "fail get location" }
         weatherViewModel?.onLocationEvent(LocationViewEvent.LocationError)
     }
+
+    override fun onLocationRequestCancel() {
+        d { "location request cancel" }
+    }
 }
 
 @Composable
@@ -47,6 +51,5 @@ fun WeatherApp(onLocationRequested: (WeatherViewModel) -> Unit = {}) {
     ProvideNavHosController {
         NavGraph()
     }
-
 
 }
