@@ -52,6 +52,10 @@ class WeatherViewModel @Inject constructor(private val getWeatherUseCase: GetWea
             is LocationViewEvent.SetLocation -> {
                 d { "viewmodel set location ${event.city}" }
                 onForecastEvent(ForecastViewEvent.GetForecast(event.city))
+
+                _weatherState.value.copy(
+                    city = event.city
+                )
             }
         }
     }

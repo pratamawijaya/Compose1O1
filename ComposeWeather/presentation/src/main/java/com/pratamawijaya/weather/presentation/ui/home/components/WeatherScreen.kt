@@ -30,7 +30,7 @@ fun WeatherScreen(
                 .fillMaxWidth()
         ) {
             OutlinedTextField(
-                value = city,
+                value = viewModelState.city,
                 modifier = Modifier
                     .padding(8.dp)
                     .fillMaxWidth(),
