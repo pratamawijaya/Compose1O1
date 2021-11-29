@@ -12,11 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.pratamawijaya.basic.ui.theme.ComposeBasicTheme
 
 @Composable
-fun OnboardingScreen() {
-    var shouldShowOnboarding by remember {
-        mutableStateOf(true)
-    }
-
+fun OnboardingScreen(onContinueClicked: () -> Unit) {
     Surface {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -25,7 +21,7 @@ fun OnboardingScreen() {
         ) {
             Text("Welcome To Basic")
             Button(onClick = {
-                shouldShowOnboarding = false
+                onContinueClicked
             }, modifier = Modifier.padding(vertical = 24.dp)) {
                 Text("Continue")
             }
@@ -37,6 +33,6 @@ fun OnboardingScreen() {
 @Composable
 fun OnboardingPreview() {
     ComposeBasicTheme {
-        OnboardingScreen()
+        OnboardingScreen(onContinueClicked = {})
     }
 }

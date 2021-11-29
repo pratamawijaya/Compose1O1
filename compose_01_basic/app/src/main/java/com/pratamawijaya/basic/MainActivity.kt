@@ -8,13 +8,12 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.pratamawijaya.basic.ui.screens.OnboardingScreen
 import com.pratamawijaya.basic.ui.theme.ComposeBasicTheme
 
 class MainActivity : ComponentActivity() {
@@ -29,7 +28,23 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-private fun MyApp(names: List<String> = listOf("World", "Compose")) {
+private fun MyApp() {
+    var shouldShowOnboarding by remember {
+        mutableStateOf(true)
+    }
+
+    if (shouldShowOnboarding) {
+        OnboardingScreen(onContinueClicked = {
+            shouldShowOnboarding = false
+        })
+    } else {
+        Greetings()
+    }
+
+}
+
+@Composable
+fun Greetings(names: List<String> = listOf("World", "Compose")) {
     Column(modifier = Modifier.padding(4.dp)) {
         for (name in names) {
             Greeting(name = name)
