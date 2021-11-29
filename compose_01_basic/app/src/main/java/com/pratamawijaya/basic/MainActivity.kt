@@ -42,6 +42,7 @@ fun Greeting(name: String) {
     var expanded = remember {
         mutableStateOf(false)
     }
+    val extraPadding = if (expanded.value) 48.dp else 0.dp
 
     Surface(
         color = MaterialTheme.colors.primary,
@@ -51,14 +52,18 @@ fun Greeting(name: String) {
             modifier = Modifier
                 .padding(24.dp)
         ) {
-            Column(modifier = Modifier.weight(1f)) {
+            Column(
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(bottom = extraPadding)
+            ) {
                 Text(text = "Hello, ")
                 Text(text = name)
             }
             OutlinedButton(onClick = {
                 expanded.value = !expanded.value
             }) {
-                Text(text = if(expanded.value) "Show Less" else "Show More")
+                Text(text = if (expanded.value) "Show Less" else "Show More")
             }
         }
 
