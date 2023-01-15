@@ -1,4 +1,4 @@
-# Example Jetpack Compose Beta
+# Example Jetpack Compose
 
 
 . . .. .
